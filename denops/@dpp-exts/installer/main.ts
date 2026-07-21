@@ -888,6 +888,21 @@ export class Ext extends BaseExt<Params> {
     await args.denops.cmd(
       "doautocmd User Dpp:ext:installer:updateDone",
     );
+
+    if (callMakeState) {
+      await this.#printMessage(
+        args.denops,
+        args.extParams,
+        `Running dpp#make_state`,
+      );
+    } else {
+      await this.#printMessage(
+        args.denops,
+        args.extParams,
+        `Not start dpp#make_state`,
+      );
+    }
+
   }
 
   async #checkRemotePlugins(
